@@ -1,14 +1,18 @@
 function doFirst(){
+
     var x = document.getElementById('canvas');
+
     canvas = x.getContext('2d');
     
-    window.addEventListener("mousemove",bucky,false);
+    canvas.beginPath();
+    canvas.moveTo(50,50);
+    canvas.lineTo(70,250);
+    canvas.lineTo(300,250);
+    canvas.closePath();
 
+    canvas.stroke();
 }
-function bucky(e){
-    canvas.clearRect(0,0,600,600);
-    var xPos = e.clientX;
-    var yPos = e.clientY;
-    canvas.fillRect(xPos-50,yPos-50,100,100);
-}
-window.addEventListener("load",doFirst,false);
+
+window.addEventListener('load',doFirst,false);
+
+
